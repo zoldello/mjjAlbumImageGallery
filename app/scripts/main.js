@@ -16,9 +16,10 @@ window.require(['../bower_components/knockout/dist/knockout.js',
 	'twitter-bootstrap', 
 	'./ko.bindingHandlers/ko.bindingHandlers.imageClick',
 	'./ko.bindingHandlers/ko.bindingHandlers.closeImageCarousel',
-	'./ko.bindingHandlers/ko.bindingHandlers.showDefaultCarousel'], function(ko, $, _, data, viewModel, twitterBootstrap) {
-	var before = function (data) {
-			var i = 0;
+	'./ko.bindingHandlers/ko.bindingHandlers.showDefaultCarousel'], function(ko, $, _, data, viewModel) {
+		'use strict';
+		
+	var before = function () {
 		},
 		success = _.bind(function (data) {
 			var vm = viewModel();
@@ -30,15 +31,14 @@ window.require(['../bower_components/knockout/dist/knockout.js',
 			window.ko.applyBindings(window.mjjSongGallery.viewModel);
 
 		}, { viewModel: viewModel}),
-		error = function (data) {
-			var i = 0;
+		error = function () {
+			console.error('Could not get image-data');
 		},
-		complete = function (data) {
-			var i = 0;
+		complete = function () {
 		};
 
 		window.ko = window.ko || ko;
 
-		data.images(before, success, error, complete)
+		data.images(before, success, error, complete);
 
 });

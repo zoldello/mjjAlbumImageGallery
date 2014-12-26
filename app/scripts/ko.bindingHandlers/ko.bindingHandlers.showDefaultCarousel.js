@@ -18,7 +18,7 @@ window.require(['knockout', 'jquery'], function(ko, $) {
 				var id = $('[role="albumWrapper"]').first().data('id'); 
 
 				$('[role="carouselCollection"] [role="carouselItem"]').removeClass('active');
-				$('[role="carouselItem"][data-id="' + id + '"]').addClass('active')
+				$('[role="carouselItem"][data-id="' + id + '"]').addClass('active');
 				$('[role="imageGalleryListing"]').hide();
 				$('[role="imageCarousel"]').show();	
 			});

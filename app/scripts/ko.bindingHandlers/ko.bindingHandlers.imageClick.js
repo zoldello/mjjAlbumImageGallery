@@ -13,12 +13,11 @@ window.require(['knockout', 'jquery'], function(ko, $) {
 
 	window.ko.bindingHandlers.imageClick = {
 		init: function (element) {
-			var i = 0;
 			$(element).on('click', function () {
 				var id = $(this).data('id'); 
 
 				$('[role="carouselCollection"] [role="carouselItem"]').removeClass('active');
-				$('[role="carouselItem"][data-id="' + id + '"]').addClass('active')
+				$('[role="carouselItem"][data-id="' + id + '"]').addClass('active');
 				$('[role="imageGalleryListing"]').hide();
 				$('[role="imageCarousel"]').show();
 			});

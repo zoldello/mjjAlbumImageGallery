@@ -1,5 +1,7 @@
 /// Knockout.js view model for the page
 window.define(['../bower_components/knockout/dist/knockout.js'], function(ko) {
+		'use strict';
+		
 	var viewModel = function() {
 		var self = {};
 
@@ -64,7 +66,7 @@ window.define(['../bower_components/knockout/dist/knockout.js'], function(ko) {
 
 			self.imageClicked = function(model) {
 				self.currentSelectedImageModel(model);
-			}
+			};
 
 			// Miscellenous
 			self.areStrictlyEqual = function areEqual(value1, value2) {
@@ -89,9 +91,9 @@ window.define(['../bower_components/knockout/dist/knockout.js'], function(ko) {
 						yesOrNo = no;
 						break; 
 					default:
-						yesOrNo = 'N/A'
+						yesOrNo = 'N/A';
 						break;
-				};
+				}
 
 				return yesOrNo;
 			};
@@ -100,4 +102,4 @@ window.define(['../bower_components/knockout/dist/knockout.js'], function(ko) {
 	};
 
 	return viewModel;
-})
+});

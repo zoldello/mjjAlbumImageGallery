@@ -6,8 +6,8 @@ window.require.config({
 });
 
 window.define(['jquery'], function ($) {
-	var a = '';
-
+	'use strict';
+	
 	var  data = {
 		_url: function() {
 			var key = '8d964ebf3f04d8b592a1296225ca2d33',

@@ -12,8 +12,7 @@ window.require(['knockout', 'jquery'], function(ko, $) {
 	window.ko = window.ko || ko; 
 
 	window.ko.bindingHandlers.closeImageCarousel = {
-		init: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
-			var i = 0;
+		init: function (element) {
 			$(element).on('click', function () {
 				$('[role="imageGalleryListing"]').show();
 				$('[role="imageCarousel"]').hide();
