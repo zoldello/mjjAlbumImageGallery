@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/zoldello/mjjAlbumImageGallery.svg)](https://travis-ci.org/zoldello/mjjAlbumImageGallery)
+[![Build Status](https://travis-ci.org/zoldello/mjjAlbumImageGallery.svg?branch=master)](https://travis-ci.org/zoldello/mjjAlbumImageGallery)
 
 Michael Jackson  Album Image Gallery
 ====================
