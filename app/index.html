@@ -43,7 +43,7 @@
             <div class="container-fluid">
               <div data-bind="foreach: $root.imageToDisplayModel" class="gallery row">
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mam imageContainer greenBoxShadow" role="imageContainer">
-                  <span data-bind="imageClick: $data, attr: {'data-id': $data.id}" role="albumWrapper">
+                  <span data-bind="imageClick: $data, attr: {'data-id': $data.id}" role="albumWrapper" class="pointer">
                     <img data-bind="attr: {'src': $root.getImageUrl($data), title: $data.title, alt: $data.title }" />
                   </span>
                   <div>
@@ -90,10 +90,6 @@
                   <td>Meta data?</td>
                   <td><input type="checkbox" data-bind="toggleMetaData: {}" checked /></td>
                 </tr>
-                <tr>
-                  <td>Items / Page</td>
-                  <td><input type="text" size="2" /> </td>
-                </tr>
               </table>
             </div>
           </div>
@@ -115,7 +111,7 @@
 
     <section role="imageCarousel" style="display: none;">
       <div class="carouselClose" role="closeImageCarousel" data-bind="closeImageCarousel">
-        <span class="pull-right carouselCloseX">&times<span>
+        <span class="pull-right carouselCloseX pointer">&times<span>
       </div>
       <br /> <br /><br /><br /><br />
 

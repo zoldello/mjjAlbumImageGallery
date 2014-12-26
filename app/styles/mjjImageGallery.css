@@ -45,6 +45,10 @@
 	height: 255px !important;
 }
 
+.pointer {
+	cursor: pointer;
+}
+
 .greenBoxShadow { 
 	box-shadow: 5px 5px 40px green;
 }

@@ -19,15 +19,6 @@ window.define(['../bower_components/knockout/dist/knockout.js'], function(ko) {
 					});
 			});
 
-			self.currentSelectedImageModel = ko.observable();
-
-			self.isImageSelected = ko.pureComputed(function () {
-				return  !!self.currentSelectedImageModel && !!self.currentSelectedImageModel();
-			});
-
-			self.currentSelectedImageModelToDisplay = ko.computed(function () {
-				return self.isImageSelected() ? self.currentSelectedImageModel() : {};
-			});
 
 			// Pagination
 			self.paginationDivision = 24; 
@@ -64,15 +55,7 @@ window.define(['../bower_components/knockout/dist/knockout.js'], function(ko) {
 				return 'https://c4.staticflickr.com/' + model.farm + '/' + model.server + '/' + model.id + '_' + model.secret + '.jpg';
 			};
 
-			self.imageClicked = function(model) {
-				self.currentSelectedImageModel(model);
-			};
-
 			// Miscellenous
-			self.areStrictlyEqual = function areEqual(value1, value2) {
-				return ko.unwrap(value1) === ko.unwrap(value2);
-			}; 
-
 			self.convertValueToYesOrNo = function convertValueToYesOrNo(value) {
 				var yesOrNo,
 					no = 'No',
