@@ -16,9 +16,12 @@ window.require(['../bower_components/knockout/dist/knockout.js',
 	'twitter-bootstrap', 
 	'./ko.bindingHandlers/ko.bindingHandlers.imageClick',
 	'./ko.bindingHandlers/ko.bindingHandlers.closeImageCarousel',
-	'./ko.bindingHandlers/ko.bindingHandlers.showDefaultCarousel'], function(ko, $, _, data, viewModel) {
+	'./ko.bindingHandlers/ko.bindingHandlers.showDefaultCarousel',
+	'./ko.bindingHandlers/ko.bindingHandlers.affixOptions'], function(ko, $, _, data, viewModel) {
 		'use strict';
 		
+
+
 	var before = function () {
 		},
 		success = _.bind(function (data) {
@@ -38,6 +41,7 @@ window.require(['../bower_components/knockout/dist/knockout.js',
 		};
 
 		window.ko = window.ko || ko;
+		window.$ = window.$ || $;
 
 		data.images(before, success, error, complete);
 
