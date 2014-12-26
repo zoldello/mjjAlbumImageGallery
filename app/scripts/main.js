@@ -17,7 +17,9 @@ window.require(['../bower_components/knockout/dist/knockout.js',
 	'./ko.bindingHandlers/ko.bindingHandlers.imageClick',
 	'./ko.bindingHandlers/ko.bindingHandlers.closeImageCarousel',
 	'./ko.bindingHandlers/ko.bindingHandlers.showDefaultCarousel',
-	'./ko.bindingHandlers/ko.bindingHandlers.affixOptions'], function(ko, $, _, data, viewModel) {
+	'./ko.bindingHandlers/ko.bindingHandlers.affixOptions',
+	'./ko.bindingHandlers/ko.bindingHandlers.toggleBoxShadowOnImage',
+	'./ko.bindingHandlers/ko.bindingHandlers.toggleMetaData'], function(ko, $, _, data, viewModel) {
 		'use strict';
 		
 

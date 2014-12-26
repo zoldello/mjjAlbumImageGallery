@@ -42,12 +42,12 @@
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="container-fluid">
               <div data-bind="foreach: $root.imageToDisplayModel" class="gallery row">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mam imageContainer">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mam imageContainer greenBoxShadow" role="imageContainer">
                   <span data-bind="imageClick: $data, attr: {'data-id': $data.id}" role="albumWrapper">
                     <img data-bind="attr: {'src': $root.getImageUrl($data), title: $data.title, alt: $data.title }" />
                   </span>
                   <div>
-                     <table class="table table-bordered table-striped">
+                     <table class="table table-bordered table-striped" role="metaData">
                       <tr>
                         <td>Id</td>
                         <td><span data-bind="text: $data.id"></span></td>
@@ -84,11 +84,11 @@
                 </caption>
                 <tr>
                   <td>Box Shadow? </td>
-                  <td><input type="checkbox" /> </td>
+                  <td><input type="checkbox" data-bind="toggleBoxShadowOnImage: {}" checked /> </td>
                 </tr>
                 <tr>
                   <td>Meta data?</td>
-                  <td><input type="checkbox" /></td>
+                  <td><input type="checkbox" data-bind="toggleMetaData: {}" checked /></td>
                 </tr>
                 <tr>
                   <td>Items / Page</td>

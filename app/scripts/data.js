@@ -8,6 +8,8 @@ window.require.config({
 window.define(['jquery'], function ($) {
 	'use strict';
 	
+	window.$ = window.$ || $;
+
 	var  data = {
 		_url: function() {
 			var key = '8d964ebf3f04d8b592a1296225ca2d33',
@@ -17,8 +19,13 @@ window.define(['jquery'], function ($) {
 		},
 
 		images: function (before, success, error, complete) {
-			$.ajax({
+			//to satisfy IE 9: http://stackoverflow.com/a/15066169/178550
+
+			window.$.support.cors = true;
+
+			window.$.ajax({
 				url: this._url(),
+				crossDomain: true,
 				type: 'GET',
 				dataType: 'JSON',
 				before: before,
