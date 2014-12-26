@@ -1,0 +1,37 @@
+.gallery {
+
+}
+
+.gallery table {
+	border-collapse:collapse; 
+	table-layout:fixed; 
+	width:260px;
+}
+
+.gallery table td {
+	border:solid 1px #fab; 
+	width:100px; 
+	word-wrap:break-word;
+}
+
+.gallery img {
+	height: 200px;
+	width: 230px;
+	margin: 2%;
+	border: 1px solid black;
+}
+
+.mam {
+	margin: 3%; !important
+}
+
+.image-carousel {
+	margin-left: 20%;
+	margin-right: 20%; 
+}
+
+.imageContainer {
+	border: 2px solid black;
+	width: 300px;
+	height: 450px;
+}

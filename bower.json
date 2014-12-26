@@ -1,0 +1,8 @@
+{
+  "name": "flickrgallery",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "requirejs-text": "~2.0.12"
+  }
+}

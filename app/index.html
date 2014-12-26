@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Flickr Gallery of Michael Jackson Songs</title>
+
+    <link rel="stylesheet" type="text/css" href="./styles/mjjImageGallery.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">   
+  </head>
+  <body>
+     <header class="top" role="header">
+        <div class="container">
+            <a href="index.html" class="navbar-brand pull-left">
+                MJJ Album Images
+            </a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="glyphicon glyphicon-align-justify"></span>
+            </button>
+            <nav class="navbar-collapse collapse" role="navigation">
+                <ul class="navbar-nav nav">
+                    <li>
+                      <a href="javascript:void(0)" data-bind="closeImageCarousel">Gallery</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" data-bind="showDefaultCarousel: {}">Carousel</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="clearFix"></div>
+
+    <section role="imageGalleryListing">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="container-fluid">
+              <div data-bind="foreach: $root.imageToDisplayModel" class="gallery row">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mam imageContainer">
+                  <span data-bind="imageClick: $data, attr: {'data-id': $data.id}" role="albumWrapper">
+                    <img data-bind="attr: {'src': $root.getImageUrl($data), title: $data.title, alt: $data.title }" />
+                  </span>
+                  <div>
+                     <table class="table table-bordered table-striped">
+                      <tr>
+                        <td>Id</td>
+                        <td><span data-bind="text: $data.id"></span></td>
+                      </tr>
+                      <tr>
+                        <td>Title</td>
+                        <td><span style="word-wrap: break-word" data-bind="text: $data.title"></span></td>
+                      </tr>
+                      <tr>
+                        <td>Publicly Accessible?</td>
+                        <td><span data-bind="text: $root.convertValueToYesOrNo($data.ispublic)"></span></td>
+                      </tr>
+                      <tr>
+                        <td>Friend-Visible?</td>
+                        <td><span data-bind="text: $root.convertValueToYesOrNo($data.isfriend)"></span></td>
+                      </tr>
+                      <tr>
+                        <td>Family-Visble?</td>
+                        <td><span data-bind="text: $root.convertValueToYesOrNo($data.isfamily)"></span></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>      
+              </div>
+            </div>  
+          </div>
+          
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <table class="table table-bordered table-striped" style="display:none;" data-bind="visible: $root.isImageSelected">
+              <caption>
+                Picture Information
+              </caption>
+              <tr>
+                <td>Id</td>
+                <td><span data-bind="text: $root.currentSelectedImageModelToDisplay().id"></span></td>
+              </tr>
+              <tr>
+                <td>Title</td>
+                <td><span data-bind="text: $root.currentSelectedImageModelToDisplay().title"></span></td>
+              </tr>
+              <tr>
+                <td>Publicly Accessible?</td>
+                <td><span data-bind="text: $root.convertValueToYesOrNo($root.currentSelectedImageModelToDisplay().ispublic)"></span></td>
+              </tr>
+              <tr>
+                <td>Friend-Visible?</td>
+                <td><span data-bind="text: $root.convertValueToYesOrNo($root.currentSelectedImageModelToDisplay().isfriend)"></span></td>
+              </tr>
+              <tr>
+                <td>Family-Visble?</td>
+                <td><span data-bind="text: $root.convertValueToYesOrNo($root.currentSelectedImageModelToDisplay().isfamily)"></span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearFix"></div>
+
+      <nav class="">
+        <ul class="pull-right pagination" data-bind="foreach: $root.pagination">
+            <li>
+              <a href="javascript:void(0)" data-bind="click: $root.updateCurrentPaginaton($index)">
+                <span data-bind="text: $data"></span>
+              </a>
+            </li>
+        </ul>
+      </nav>
+    </section>
+
+    <section role="imageCarousel" style="display: none;">
+      <div role="closeImageCarousel" data-bind="closeImageCarousel">
+        <span class="glyphicon glyphicon-remove pull-right"><span>
+      </div>
+      <br /> <br />
+
+      <div class="clearFix"></div>
+
+      <div>
+        <div id="mjjGalleryCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+            <!-- Carousel items -->
+            <div class="carousel-inner gallery" role="carouselCollection" data-bind="foreach: $root.imagesModel">
+                <div class="item image-carousel" role="carouselItem" data-bind="attr: {'data-id': $data.id }">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                        <img data-bind="attr: {'src': $root.getImageUrl($data), title: $data.title } " />
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <table class="table table-bordered table-striped">
+                              <tr>
+                                <td>Id</td>
+                                <td><span data-bind="text: $data.id"></span></td>
+                              </tr>
+                              <tr>
+                                <td>Title</td>
+                                <td><span data-bind="text: $data.title"></span></td>
+                              </tr>
+                              <tr>
+                                <td>Publicly Accessible?</td>
+                                <td><span data-bind="text: $root.convertValueToYesOrNo($data.ispublic)"></span></td>
+                              </tr>
+                              <tr>
+                                <td>Friend-Visible?</td>
+                                <td><span data-bind="text: $root.convertValueToYesOrNo($data.isfriend)"></span></td>
+                              </tr>
+                              <tr>
+                                <td>Family-Visble?</td>
+                                <td><span data-bind="text: $root.convertValueToYesOrNo($data.isfamily)"></span></td>
+                              </tr>
+                          </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#mjjGalleryCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="carousel-control right" href="#mjjGalleryCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+   <script data-main="./scripts/main" src="../bower_components/requirejs/require.js"></script>
+
+  </body>
+</html>
