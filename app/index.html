@@ -101,7 +101,7 @@
       <nav class="">
         <ul class="pull-right pagination" data-bind="foreach: $root.pagination">
             <li>
-              <a href="javascript:void(0)" data-bind="click: $root.updateCurrentPaginaton($index)">
+              <a href="javascript:void(0)" data-bind="paginationClicked: $root.updateCurrentPaginaton, attr: {'data-index': $index() }">
                 <span data-bind="text: $data"></span>
               </a>
             </li>

@@ -9,7 +9,7 @@ window.define(['../bower_components/knockout/dist/knockout.js'], function(ko) {
 			self.imagesModel = ko.observableArray([]);
 
 			self.imageToDisplayModel = ko.pureComputed(function imageToDisplayModel() {
-				var maxIndex = self.paginationDivision * self.currentPaginationNumber() - 1,
+				var maxIndex = (self.paginationDivision * (self.currentPaginationNumber() + 1)) - 1,
 					minIndex = maxIndex - (self.paginationDivision - 1);
 
 					return ko.utils.arrayFilter(self.imagesModel(), function(item, index) {
@@ -23,7 +23,7 @@ window.define(['../bower_components/knockout/dist/knockout.js'], function(ko) {
 			// Pagination
 			self.paginationDivision = 24; 
 			
-			self.currentPaginationNumber = ko.observable(1);
+			self.currentPaginationNumber = ko.observable(0);
 			
 			self.pagination = ko.observableArray();
 
@@ -47,7 +47,7 @@ window.define(['../bower_components/knockout/dist/knockout.js'], function(ko) {
 					return;
 				}
 
-				self.currentPaginationNumber(index + 1);
+				self.currentPaginationNumber(index);
 			};
 
 			// image activity
