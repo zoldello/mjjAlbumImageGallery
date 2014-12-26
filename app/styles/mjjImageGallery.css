@@ -34,4 +34,20 @@
 	border: 2px solid black;
 	width: 300px;
 	height: 450px;
+	border-radius: 30px;
+    box-shadow: 5px 5px 40px green;
+}
+
+.carouselClose {
+	margin-left: 10px;
+	margin-bottom: 50px;
+}
+
+.carouselCloseX {
+	font-size: 350%;
+	border: 1px solid;
+	text-align: center;
+	width: 4%;
+    border-radius: 30px;
+    box-shadow: 5px 5px 40px black;
 }
