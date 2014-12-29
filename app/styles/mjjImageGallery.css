@@ -19,8 +19,8 @@
 }
 
 .gallery img {
-	height: 50%;
-	width: 90%;
+	height: 240px;
+	width: 230px;
 	margin: 2%;
 	border: 1px solid black;
 }
